@@ -1,14 +1,8 @@
 const crypto = require('crypto');
 const request = require('request');
 
-/*
-var apiKey = '32b1168a-ca84-46c2-a894-d423d9bad4ee';
-var secret =
-  'Xv0+tInzEueQ9kXZaqydcAtgDYR7TT90Mq/pkAmYmblrt3b0bfUX1NJsHnlIRZK2dUYb4GSAPVMN5dmbX2trhg==';
-*/
-const apiKey = '6dbe3b37-f212-4233-b85b-5f1e5db20159';
-const secret =
-    'HP1Oglka3H6ZRDZD82rMSaXh9qP5bj2xKF5JKqMEHYVJpmxcreqixqBNq9Wd79sDhq5MVwk1Xn4RtPN1hyGh4Q==';
+const apiKey = 'apiKey';
+const secret = 'secret';
 
 /*
 var body = {
