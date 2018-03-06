@@ -30,7 +30,6 @@ const path = '/orders/8219';
 const sign = crypto.createHmac('sha512', Buffer.from(secret, 'base64'))
   .update(nonce + method + path /* + JSON.stringify(body) */).digest('base64');
 
-// var host = 'EC2PublicRelayALB-638579431.ap-southeast-2.elb.amazonaws.com:444';
 const host = 'api.gopax.qa.streami.co';
 
 const options = {
