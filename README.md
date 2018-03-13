@@ -14,7 +14,7 @@ https://api.gopax.co.kr
 HTTP 오류코드
 
 이름|설명
-------------|------------
+-|-
 400|잘못된 요청 - 요청 형식이 유효하지 않음
 401|	권한 없음 - 잘못된 API 키
 403|	금지됨 - 요청한 리소스에 대한 접근 권한이 없음
@@ -33,7 +33,7 @@ HTTP 오류코드
 고팍스는 REST 요청에 대한 응답이 배열(array)의 형태로 반환되는 경우 커서 페이지 처리가 적용됩니다. 대부분의 엔드포인트는 기본적으로 최신 항목을 반환하며, 추가적인 결과를 가져오려는 경우에는 이미 반환된 데이터를 기준으로 처리하고자 하는 페이지의 방향을 명시해야 합니다.
 
 이름|기본값|설명
-------------|------------|------------
+-|-|-
 pastmax||본 페이지 ID 뒤의 (오래된) 페이지를 요청함
 lastestmin||본 페이지 ID 앞의 (새로운) 페이지를 요청함
 limit|100|각 요청에 포함되는 결과의 갯수 (최대 100 / 기본 100)
@@ -131,16 +131,22 @@ nonce = str(time.time())
 method = 'GET'
 request_path = '/balances'
 
-//필수 정보를 연결하여 prehash 문자열을 생성함
+"""
+필수 정보를 연결하여 prehash 문자열을 생성함
+"""
 
 what = nonce + method + request_path # + request_body
 
-//base64로 secret을 디코딩함
+"""
+base64로 secret을 디코딩함
+"""
 
 key = base64.b64decode(secret)
 
-//hmac으로 필수 메시지에 서명하고
-//그 결과물을 base64로 인코딩함
+"""
+hmac으로 필수 메시지에 서명하고
+그 결과물을 base64로 인코딩함
+"""
 
 signature = hmac.new(key, what, hashlib.sha512)
 return base64.b64encode(signature.digest())
