@@ -192,7 +192,7 @@ GET /orders
 ```
 ### Query String Parameter
 이름|	설명
-------|------
+-|-
 trading-pair-name	|[선택] 유효한 거래쌍 이름(ETH-KRW, BTC-KRW, ...)
 ### 응답
 ```
@@ -274,7 +274,7 @@ GET /trades
 ```
 ### Query String Parameter
 이름|	설명
------|-----
+-|-
 trading-pair-name|	[선택] 유효한 거래쌍 이름(ETH-KRW, BTC-KRW, ...)
 ### 응답
 ```
@@ -349,7 +349,7 @@ GET /trading-pairs/<trading-pair-name>/book
 ```
 ### Query String Parameter
 이름|	설명
------|-----
+-|-
 level|	호가창의 상세정보 수준 (1 = 매수호가 및 매도호가, 2 = 매수 및 매도 주문 각 50개, 기타 = 호가창 전체)
 ### 응답
 ```
@@ -373,7 +373,7 @@ GET /trading-pairs/<trading-pair-name>/trades
 ```
 ### Query String Parameter
 이름|	설명
------|-----
+-|-
 limit	|반환되는 항목의 갯수 (최대 100)
 pastmax	|이 ID보다 오래된 데이터를 제외함
 latestmin|	이 ID보다 새로운 최신 데이터를 가져옴
@@ -414,7 +414,7 @@ GET /trading-pairs/<trading-pair-name>/candles
 ```
 ### Query String Parameter
 이름|	설명
------|-----
+-|-
 start	|시작 시점 (ms 단위)
 end	|종료 시점 (ms 단위)
 interval	|희망하는 시간 간격 (분 단위, 1/5/30/1440)
