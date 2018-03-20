@@ -987,6 +987,40 @@ Content-Type: application/json
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h3 id='http-8'>HTTP 요청</h3>
 <p><code>GET /trades</code></p>
+<h3 id='query'>Query 파라미터</h3>
+<table><thead>
+<tr>
+<th>파라미터</th>
+<th>필수 여부</th>
+<th>설명</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>선택</td>
+<td>반환되는 항목의 갯수 (최대 100)</td>
+</tr>
+<tr>
+<td>pastmax</td>
+<td>선택</td>
+<td>이 ID보다 오래된 데이터를 제외함</td>
+</tr>
+<tr>
+<td>latestmin</td>
+<td>선택</td>
+<td>이 ID보다 새로운 최신 데이터를 가져옴</td>
+</tr>
+<tr>
+<td>after</td>
+<td>선택</td>
+<td>이 타임스탬프 이후의 데이터를 제외함 (ms 단위)</td>
+</tr>
+<tr>
+<td>before</td>
+<td>선택</td>
+<td>이 타임스탬프 이전의 데이터를 제외함 (ms 단위)</td>
+</tr>
+</tbody></table>
 <h3 id='cd5e8f5148-6'>결과값 설명</h3>
 <p><code class="block" style="white-space: pre; color: grey;">{
   &quot;id&quot;: <i style="color: black;">&lt;ID&gt;</i>,
@@ -1140,7 +1174,7 @@ Content-Type: application/json
 <td>거래 쌍. <a href="#ab37bf30de">거래쌍 목록 조회하기</a>에서 전체 목록을 확인할 수 있습니다.</td>
 </tr>
 </tbody></table>
-<h3 id='query'>Query 파라미터</h3>
+<h3 id='query-2'>Query 파라미터</h3>
 <table><thead>
 <tr>
 <th>파라미터</th>
@@ -1226,7 +1260,7 @@ Content-Type: application/json
 <td>거래 쌍. <a href="#ab37bf30de">거래쌍 목록 조회하기</a>에서 전체 목록을 확인할 수 있습니다.</td>
 </tr>
 </tbody></table>
-<h3 id='query-2'>Query 파라미터</h3>
+<h3 id='query-3'>Query 파라미터</h3>
 <table><thead>
 <tr>
 <th>파라미터</th>
@@ -1393,7 +1427,7 @@ Content-Type: application/json
 <td>거래 쌍. <a href="#ab37bf30de">거래쌍 목록 조회하기</a>에서 전체 목록을 확인할 수 있습니다.</td>
 </tr>
 </tbody></table>
-<h3 id='query-3'>Query 파라미터</h3>
+<h3 id='query-4'>Query 파라미터</h3>
 <table><thead>
 <tr>
 <th>파라미터</th>
