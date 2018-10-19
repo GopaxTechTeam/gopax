@@ -17,7 +17,7 @@ request_body = {
 	"price": 1.0,
 	"side": "buy", #buy 또는 sell
 	"tradingPairName": "CND-KRW",
-	"type": "limit" #limit 또는 market	
+	"type": "limit" #limit
 };
 
 #필수 정보를 연결하여 prehash 문자열을 생성함
