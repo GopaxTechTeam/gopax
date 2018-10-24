@@ -29,7 +29,6 @@ class Response
 class Constants
 {
     const LIMIT = 'limit';
-    const MARKET = 'market';
     
     const BUY = 'buy';
     const SELL = 'sell';
@@ -74,7 +73,7 @@ class OrderRequest extends Request
 {
     public function __construct(string $type, string $side, float $price, float $amount, string $tradingPairName)
     {
-        $this->data['type']            = $type; // LIMIT, MARKET
+        $this->data['type']            = $type; // LIMIT
         $this->data['side']            = $side; // BUY, SELL
         $this->data['price']           = $price;
         $this->data['amount']          = $amount;
