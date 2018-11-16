@@ -40,13 +40,13 @@ custom_headers = {
 }
 
 def main():
-    # method = get
+    # HTTP request method = GET
     querystring = ''
     last_oldest_id = None
     while True:
         if last_oldest_id != None:
-            # to list trading items older than last response,
-            # need to specify `pastmax` querystring parameter
+            # pastmax = maximum id value among the trades in the last API response
+            # set it to exclude any result with smaller id
             querystring = '?pastmax=' + str(last_oldest_id)
         req = requests.get(url=base_url + request_path + querystring,
                 headers=custom_headers)
