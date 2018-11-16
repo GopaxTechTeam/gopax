@@ -6,16 +6,13 @@ import time, base64, hmac, hashlib, json
 import requests
 
 # Use your API key and the secret
-apikey = '573991c1-4e3c-459d-b1de-2c12c3ae4884'
-secret = 'Ka/LO30OGktP0VpNdfRd43SiAlSNRmSwKUDRy1Kh1zTGDmgU+fv47fVQcVZVgMlAcgMSTxPSqpAjnToGScGWDg=='
-
-# TODO:
-# secret = '' # TODO:
+apikey = '' # TODO:
+secret = '' # TODO:
 
 # Generate nonce
 nonce = str(time.time())
 method = 'GET'
-base_url = 'https://api.qa.gopax.co.kr' # TODO:
+base_url = 'https://api.gopax.co.kr' # TODO:
 request_path = '/trades'
 
 # Generate prehash string
