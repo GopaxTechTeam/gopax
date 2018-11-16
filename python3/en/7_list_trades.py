@@ -1,46 +1,48 @@
 #
-# 사용자 거래 기록 조회하기
+# List trades
 #
-import time, base64, hmac, hashlib, requests, json
+from __future__ import print_function
+import time, base64, hmac, hashlib, json
+import requests
 
-# 발급받은 api키와 시크릿키를 입력한다
-apikey = ''
-secret = ''
+# Use your API key and the secret
+apikey = '' # TODO:
+secret = '' # TODO:
 
-# nonce값 생성
+# Generate nonce
 nonce = str(time.time())
 method = 'GET'
 request_path = '/trades'
 
-#필수 정보를 연결하여 prehash 문자열을 생성함
+# Generate prehash string
 what = nonce + method + request_path
-#base64로 secret을 디코딩함
+# Decode the secret using base64
 key = base64.b64decode(secret)
-#hmac으로 필수 메시지에 서명하고
+# Generate the signature using HMAC
 signature = hmac.new(key, str(what).encode('utf-8'), hashlib.sha512)
-#그 결과물을 base64로 인코딩함
+# Finally, Encode the signature in base64
 signature_b64 = base64.b64encode(signature.digest())
 
-# HTML 소스 가져오기
 def HTMLsouceGet(p):
-	print (p.text)
+    "Prints response body"
+    print(p.text)
 	
 custom_headers = {
-	'API-Key': apikey,
-	'Signature': signature_b64,
-	'Nonce': nonce
+    'API-Key': apikey,
+    'Signature': signature_b64,
+    'Nonce': nonce
 }
-								
+
 def main():
-	# method = get
-	req = requests.get(url = 'https://api.gopax.co.kr' + request_path, headers = custom_headers)
+    # method = get
+    req = requests.get(url = 'https://api.gopax.co.kr' + request_path, headers = custom_headers)
 
-	if req.ok:
-		HTMLsouceGet(req)
-
-	else:
-		print ('요청 에러')
-		HTMLsouceGet(req)
+    if req.ok:
+        HTMLsouceGet(req)
+    else:
+        print('Error!')
+        HTMLsouceGet(req)
  
 if __name__ == '__main__':
-	main()
+    main()
+
