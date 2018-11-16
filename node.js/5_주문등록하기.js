@@ -17,7 +17,7 @@ var json_body = {
   price: 1.0,
   side: "buy", //buy 또는 sell
   tradingPairName: "CND-KRW",
-  type: "limit" //limit 또는 market
+  type: "limit" //limit
 };
 var body = JSON.stringify(json_body, Object.keys(json_body).sort());
 
