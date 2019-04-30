@@ -16,7 +16,7 @@ var requestPath = '/balances';
 // 필수 정보를 연결하여 prehash 문자열을 생성함
 var what = nonce + method + requestPath;
 // base64로 secret을 디코딩함
-var key = Buffer(secret, 'base64');
+var key = Buffer.from(secret, 'base64');
 // secret으로 sha512 hmac을 생성함
 var hmac = crypto.createHmac('sha512', key);
 
